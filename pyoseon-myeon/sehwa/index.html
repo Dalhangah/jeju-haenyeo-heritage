@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어촌계 실무 가이드 - 세화리 기록화 사업</title>
+    <link rel="stylesheet" href="../../resource/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="home-btn">표선면 세화리 해녀 생애조사</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#investigator" target="_blank">조사원&사업 소개</a></li>
+                <li><a href="tel:01091044664">문의하기</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>표선면 세화리 해녀 생애조사</h1>
+        <p>제주 해녀 어르신들의 기록을 유산으로 남기기 위한 인터뷰 사업에 동참해주세요.</p>
+    </header>
+
+    <main class="content">
+        <section>
+            <h2>기록을 위한 협조 안내</h2>
+            <p>세화리(가마리)의 바다를 지켜오신 계장님과 실무자분들의 노고에 깊은 존경을 표합니다. 본 사업은 마을의 소중한 인적 자산인 해녀 어르신들의 생애를 체계적으로 기록하여 디지털 자산으로 보존하기 위해 추진됩니다.</p>
+            
+            <div class="quote-box">
+                <strong>핵심 확인 사항:</strong> 이번 조사 단계에서는 기존에 이미 참여하셨던 분들은 대상에서 제외됩니다. 보다 폭넓은 기록을 위해 새로운 어르신들의 목소리를 담고자 합니다.
+            </div>
+        </section>
+
+        <section>
+            <h3>기존 조사 완료자 (제외 대상)</h3>
+            <div class="profile-card" style="background-color: #fff0f0; border-color: #f5c6cb;">
+                <div class="profile-info">
+                    <p class="profile-tagline" style="color: #d9534f;">아래 어르신들은 이미 기록이 완료되어 이번 조사 대상에서 제외됩니다.</p>
+                    <ul class="career-list">
+                        <li>김화자 어르신</li>
+                        <li>안순희 어르신</li>
+                        <li>현무생 어르신</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <h3>조사 진행 단계</h3>
+            <ul class="summary-list">
+                <li><strong>1단계: 대상자 선정</strong> - 75세 이상 고령 해녀 중 조사가 필요한 대상을 어촌계와 협의하여 선정합니다.</li>
+                <li><strong>2단계: 일정 협의</strong> - 선정된 어르신 및 어촌계 실무자와 인터뷰 및 현장 조사 시간을 조율합니다.</li>
+                <li><strong>3단계: 현장 방문</strong> - 조사원이 마을을 방문하여 구술 채록, 사진 촬영 및 자료 수집을 진행합니다.</li>
+                <li><strong>4단계: 데이터 검토</strong> - 수집된 자료의 내용을 확인하고 아카이브 등록을 위한 최종 편집을 거칩니다.</li>
+            </ul>
+        </section>
+
+        <section id="links" class="btn-group">
+            <a href="https://jejuhaenyeo.jeju.kr/archive/village/detail?villageCooperativeId=74" target="_blank" class="btn">세화리 아카이브 상세보기</a>
+            <a href="./2024achive.html" class="btn primary">2024 해녀 생애사 서적 보기</a>
+            <button class="btn" onclick="openInviteModal()">초청카드 보기</button></section>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.85em; border-top: 1px solid #333;">
+        &copy; 2026 Dalhan9Art & 제주한라일보. All Rights Reserved.
+    </footer>
+
+    <!-- 초청카드 팝업 레이어 -->
+    <div id="inviteModal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>해녀 어르신 초청카드</h3>
+                <button class="close-btn" onclick="closeInviteModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- invite_card.html이 로드될 영역 -->
+                <iframe id="inviteFrame" src="invite_card.html" style="width:100%; height:550px; border:none;"></iframe>
+            </div>
+            <div class="modal-footer">
+                <div class="share-box">
+                    <p>메시지 내용 (카톡/문자용):</p>
+                    <textarea id="shareMessage" readonly>삼춘, 제주해녀가 유네스코 인류무형문화유산이랜 맙심. 그난 삼춘 살아온 이야기도 문화유산인거라! 삼춘의 소중한 살을 기록을 남겨 유산으로 물려주려고 하는데 어떵 함께 안하젠?!?! .\n\n[제주해녀 아카이브]\nhttps://jejuhaenyeo.jeju.kr/archive/village/detail?villageCooperativeId=74</textarea>
+                </div>
+                <div class="popup-btn-group">
+                    <button class="btn small" onclick="copyMessage()">메시지 복사</button>
+                    <button class="btn small primary" onclick="downloadInviteImage()">이미지로 저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function openInviteModal() {
+            document.getElementById('inviteModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // 스크롤 방지
+        }
+
+        function closeInviteModal() {
+            document.getElementById('inviteModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function copyMessage() {
+            const textArea = document.getElementById('shareMessage');
+            textArea.select();
+            document.execCommand('copy');
+            alert('메시지가 클립보드에 복사되었습니다.');
+        }
+
+        async function downloadInviteImage() {
+            const frame = document.getElementById('inviteFrame');
+            const frameDoc = frame.contentDocument || frame.contentWindow.document;
+            const captureArea = frameDoc.getElementById('capture-area');
+            
+            // 이미지 저장 전용 스타일 적용 (버튼 숨기고 QR 표시)
+            frameDoc.body.classList.add('is-capturing');
+            
+            // 약간의 지연 시간을 주어 브라우저 렌더링 대기
+            setTimeout(() => {
+                html2canvas(captureArea, {
+                    scale: 2, // 고해상도
+                    backgroundColor: "#ffffff",
+                    useCORS: true
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = '제주해녀_초청카드.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    
+                    // 원래 상태로 복구
+                    frameDoc.body.classList.remove('is-capturing');
+                });
+            }, 100);
+        }
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('inviteModal');
+            if (event.target == modal) {
+                closeInviteModal();
+            }
+        }
+    </script>
+
+</body>
+</html>

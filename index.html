@@ -3,194 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제주 해녀 생애사 기록화 사업 - 세화리(가마리) 모델</title>
-    <style>
-        /* CSS Variables for Black & Simple Theme */
-        :root {
-            --bg-color: #0d0d0d;
-            --text-main: #e0e0e0;
-            --text-muted: #888888;
-            --border-color: #333333;
-            --accent-color: #ffffff;
-        }
-
-        body { 
-            font-family: 'Noto Sans KR', sans-serif; 
-            line-height: 1.8; 
-            color: var(--text-main); 
-            background-color: var(--bg-color);
-            margin: 0; 
-            padding: 0; 
-            font-weight: 300;
-            word-break: keep-all;
-        }
-
-        /* Hero Section - Flexbox applied */
-        .hero { 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(13,13,13,0.85), rgba(13,13,13,0.95)), url('seahwa_sea.jpg'); 
-            background-position: center;
-            background-size: cover; 
-            color: var(--accent-color); 
-            padding: 120px 20px; 
-            text-align: center; 
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 { 
-            font-size: 2.8em; 
-            font-weight: 400;
-            margin-bottom: 15px; 
-            letter-spacing: -0.03em;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1em;
-            margin: 0;
-        }
-
-        /* Content Area */
-        .content { 
-            width: 90%; 
-            max-width: 800px; /* narrowed for minimal reading experience */
-            margin: 80px auto; 
-        }
-
-        h2, h3 {
-            color: var(--accent-color);
-            font-weight: 400;
-            margin-top: 2.5em;
-            margin-bottom: 1em;
-        }
-
-        p {
-            color: var(--text-muted);
-        }
-
-        .highlight { 
-            color: var(--accent-color); 
-            font-weight: 500; 
-            border-bottom: 1px solid var(--text-muted);
-        }
-
-        /* Minimalist Quote Box */
-        .quote-box { 
-            border-left: 2px solid var(--border-color); 
-            padding: 20px 0 20px 30px; 
-            margin: 60px 0; 
-            color: var(--text-muted);
-            font-size: 1.05em;
-        }
-
-        /* Table Styling */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        .info-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 30px; 
-            text-align: left;
-        }
-
-        .info-table th, .info-table td { 
-            padding: 20px 15px; 
-            border-bottom: 1px solid var(--border-color); 
-        }
-
-        .info-table th { 
-            color: var(--accent-color);
-            font-weight: 400;
-            border-top: 2px solid var(--accent-color); 
-        }
-
-        /* Minimalist Outline Button */
-        .btn-group { 
-            text-align: center; 
-            margin-top: 80px; 
-            margin-bottom: 40px;
-        }
-
-        .btn { 
-            display: inline-block;
-            padding: 16px 45px; 
-            background: transparent; 
-            color: var(--accent-color); 
-            text-decoration: none; 
-            border: 1px solid var(--border-color); 
-            font-size: 0.95em;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease; 
-        }
-
-        .btn:hover {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border-color: var(--accent-color);
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .hero { padding: 80px 20px; }
-            .hero h1 { font-size: 2em; }
-            .content { margin: 50px auto; }
-            .info-table th, .info-table td { padding: 15px 10px; font-size: 0.9em; }
-            .btn { padding: 15px 30px; width: 80%; box-sizing: border-box; }
-        }
-    </style>
+    <title>제주 해녀 생애사 기록화 사업 - 아카이브</title>
+    <link rel="stylesheet" href="./resource/style.css">
 </head>
 <body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#" class="home-btn">HOME</a>
+            <ul class="nav-links">
+                <li><a href="#project-intro">기록의 가치</a></li>
+                <li><a href="#investigator">조사원 소개</a></li>
+                <li><a href="#achievements">조사 현황</a></li>
+                <li><a href="#survey-details">조사 항목</a></li>
+            </ul>
+        </div>
+    </nav>
     <header class="hero">
         <h1>숨비소리에 담긴 삶의 궤적</h1>
-        <p>세화리(가마리) 해녀 어르신들의 소중한 기억을 보존합니다</p>
+        <p>제주한라일보와 함께하는 제주 해녀 문화 디지털 기록화 사업</p>
     </header>
+
     <main class="content">
-        <h2>사업의 취지</h2>
-        <p>유네스코 인류무형문화유산인 제주 해녀는 제주의 상징이자 강인한 어머니의 표상입니다.[1, 4] <span class="highlight">세화리(가마리)</span>를 기점으로 시작되는 이번 기록화 사업은 고령 해녀들의 삶을 기록하여 미래 세대에게 소중한 자산으로 물려주기 위한 약속입니다.</p>
-        
-        <div class="quote-box">
-            "바다에 들어가면 저승이고, 나오면 이승이라 했습니다. 그 험한 길을 묵묵히 걸어온 우리 해녀 어르신들의 이야기가 곧 제주의 역사입니다." [3, 8]
-        </div>
+        <section id="project-intro">
+            <h2>기록의 가치</h2>
+            <p>유네스코 인류무형문화유산인 제주 해녀는 제주의 상징이자 강인한 생명력의 표상입니다. 본 사업은 고령 해녀들의 삶과 역사를 체계적으로 수집하고 공개하는 <span class="highlight">디지털 아카이브 구축</span>을 목적으로 합니다. 사라져가는 현장의 목소리를 기록하여 미래 세대에게 소중한 문화 자산으로 전달하고자 합니다.</p>
+            
+            <div class="quote-box">
+                "사라져가는 기억을 기록으로, 제주의 숨비소리를 잇다"
+            </div>
+        </section>
 
-        <h3>조사 계획 및 추진 지역</h3>
-        <div class="table-container">
-            <table class="info-table">
-                <thead>
-                    <tr>
-                        <th>구분</th>
-                        <th>어촌계</th>
-                        <th>대상 및 목적</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>거점 마을</td>
-                        <td>세화리(가마리)</td>
-                        <td>전형적인 해녀 공동체 모델 구축 및 기록 확장 </td>
-                    </tr>
-                    <tr>
-                        <td>확장 마을</td>
-                        <td>표선, 하천, 토산</td>
-                        <td>표선 권역 전체의 해양 문화 네트워크 형성 </td>
-                    </tr>
-                    <tr>
-                        <td>조사 대상</td>
-                        <td>75세 이상 해녀</td>
-                        <td>물질 경험, 생애 전반, 마을 문화유산 구술 </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <section id="investigator">
+            <h2>조사원 소개: 예술가의 시선으로 담는 역사</h2>
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="./resource/img/_artist_profic.jpg" alt="조사원 달항아 캐릭터 프로필">
+                </div>
+                
+                <div class="profile-info">
+                    <h3>조사원 박항아 (Dalhan9Art)</h3>
+                    <p class="profile-tagline">제주의 설화와 역사를 기록하는 만화가이자 서비스 기획자</p>
+                    
+                    <ul class="career-list">
+                        <li>현) 제주만화인연대 대표</li>
+                        <li>현) 한국만화웹툰학회 제주지역 이사</li>
+                        <li>웹툰 아티스트 및 웹 서비스 기획·개발자</li>
+                        <li>제주해녀문화 디지털 아카이브 구축 사업 조사원 (2025~2026)</li>
+                    </ul>    
+                    <p>단순한 데이터 수집을 넘어, 만화적 상상력과 예술가의 시선으로 현장의 온기를 담아내어 기록에 생명력을 더하고 있습니다. 제주 곳곳을 발로 뛰며 해녀 어르신들의 삶 속에 숨겨진 드라마틱한 서사를 발굴합니다.</p>
+                    <div class="profile-btn-group">
+                        <a href="https://grafolio.ogq.me/profile/DalHan9Art/project" target="_blank" class="btn small">Grafolio</a>
+                        <a href="https://instagram.com/dalhan9art" target="_blank" class="btn small">Instagram</a>
+                        <a href="https://www.jejumanain.org" target="_blank" class="btn small">제주만화인연대</a>
+                    </div>
+                </div>
+            </div>
+            
 
-        <div class="btn-group">
-            <a href="#" class="btn">해녀 어르신 추천 및 문의하기</a>
-        </div>
+        </section>
+
+        <section id="achievements">
+            <h2>사업 성과 및 아카이브의 지향점</h2>
+            
+            <div class="project-vision">
+                <p>본 사업은 2016년 유네스코 인류무형문화유산으로 등재된 <strong>제주해녀문화의 체계적인 보존과 전승</strong>을 목적으로 합니다. 현재 도내 곳곳에 산재해 있으나 정보 공유가 어려웠던 연구 기록물, 영상, 사진 자료들을 디지털로 통합하여 누구나 쉽게 접근할 수 있는 공공 자산을 구축합니다.</p>
+                
+                <div class="vision-grid">
+                    <div class="vision-item">
+                        <strong>장기적 보존</strong>
+                        <span>흩어진 기록을 수집하여 영구적인 디지털 자산으로 보전</span>
+                    </div>
+                    <div class="vision-item">
+                        <strong>자긍심 고취</strong>
+                        <span>해녀 어르신들의 삶을 기록하여 공동체의 자부심 회복</span>
+                    </div>
+                    <div class="vision-item">
+                        <strong>문화 가치 확산</strong>
+                        <span>국내외 방문객에게 해녀문화에 대한 올바른 이해 제공</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>권역</th>
+                            <th>조사 마을</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>서귀포 동지역</strong></td>
+                            <td>
+                                하효동, 보목동, 토평동, 서귀동, 법환동, 강정동, 월평동, 대포동, 중문동, 색달동, 하예동
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>표선면</strong></td>
+                            <td>하천리, 표선리, 세화리, 토산리</td>
+                        </tr>
+                        <tr>
+                            <td><strong>남원읍</strong></td>
+                            <td>신흥리, 태흥3리, 태흥2리, 태흥1리, 남원리, 위미2리, 위미1리, 신례리, 하례리</td>
+                        </tr>
+                        <tr>
+                            <td><strong>안덕면</strong></td>
+                            <td>대평리, 화순리, 사계리</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="survey-details">
+            <h2>주요 조사 항목</h2>
+            <ul class="summary-list">
+                <li>어촌계 시설 현황 및 마을 어장의 구체적인 위치와 면적을 파악합니다.</li>
+                <li>해녀 인구 구성과 연령대, 신입·은퇴 현황 등 공동체의 변화 추이를 기록합니다.</li>
+                <li>수산물 위판 현황과 계절별 채취 품목을 통해 해녀의 경제 활동 구조를 분석합니다.</li>
+                <li>해수온 상승 및 연안 개발이 바다 생태계와 물질 작업 환경에 미치는 영향을 수집합니다.</li>
+                <li>불턱, 원담 등 유형 유산과 해녀 노래, 풍속 등 무형 유산의 내력을 전수 조사합니다.</li>
+                <li>해녀 개별 생애사와 물질 도구 및 복식의 변천 과정을 세밀하게 기록합니다.</li>
+                <li>디지털 아카이브 구축을 위한 위치 정보(GIS) 및 사진·영상 시각 자료를 확보합니다.</li>
+            </ul>
+        </section>
+
+        <section id="links" class="btn-group">
+            <a href="https://grafolio.ogq.me/profile/DalHan9Art/project" target="_blank" class="btn primary">달항아 작가 Grafolio</a>
+            <a href="https://jejuhaenyeo.jeju.kr/" target="_blank" class="btn primary">제주해녀문화 디지털 아카이브 방문</a>
+        </section>
     </main>
+
+    <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.85em; border-top: 1px solid #333;">
+        &copy; 2026 Dalhan9Art & 제주한라일보. All Rights Reserved.
+    </footer>
 </body>
 </html>

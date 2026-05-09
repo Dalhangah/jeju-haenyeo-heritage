@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 제주해녀생애사 - 세화리 인터뷰</title>
+    <link rel="stylesheet" href="../../resource/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="home-btn">표선면 세화리 해녀 생애조사</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#investigator" target="_blank">조사원&사업 소개</a></li>
+                <li><a href="tel:01091044664">문의하기</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>2024 해녀 생애사 기록 서적</h1>
+        <p>세화리 해녀들의 삶을 담은 기록물을 확인하세요</p>
+    </header>
+
+    <main class="content">
+        <!-- 1. 서적 정보 섹션 -->
+        <section>
+            <h2>출간 서적 정보</h2>
+            <div class="book-info-card">
+                <div class="book-cover">
+                    <img src="../../resource/2024achive/_cover.jpg" alt="서적 표지">
+                </div>
+                <div class="book-meta">
+                    <h3>&lt;2024 제주해녀생애사 -좀녀 아니 댕기믄 바당 엇어져 갈 거&gt;</h3>
+                    <ul class="meta-list">
+                        <li><strong>저자:</strong> 제주특별자치도, 제주기록문화연구소 하간 편</li>
+                        <li><strong>출판:</strong> 제주특별자치도 (2024)</li>
+                        <li><strong>형태:</strong> 인쇄자료 (책자형)</li>
+                    </ul>
+                    <p style="font-size: 0.9em;">이 서적은 세화리 해녀 어르신들의 생생한 인터뷰와 물질 문화를 집대성한 기록물입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 인터뷰 이미지 뷰어 섹션 -->
+        <section id="viewer-section">
+            <h3>세화리 해녀 인터뷰 수록본</h3>
+            <p style="font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px;">※ 좌우 버튼을 클릭하여 페이지를 넘겨볼 수 있습니다.</p>
+            
+            <div class="viewer-container">
+                <button class="nav-btn prev-btn" onclick="changePage(-1)" aria-label="이전 페이지">&#10094;</button>
+                <div class="viewer-img-wrapper">
+                    <img id="viewer-img" src="../../resource/2024achive/sehwa_1.jpg" alt="인터뷰 내용 1페이지">
+                </div>
+                <button class="nav-btn next-btn" onclick="changePage(1)" aria-label="다음 페이지">&#10095;</button>
+            </div>
+            
+            <div class="page-indicator" id="page-num">1 / 5</div>
+        </section>
+
+        <div class="btn-group" style="margin-top: 80px;">
+            <a href="./index.html" class="btn">메인으로 돌아가기</a>
+        </div>
+    </main>
+
+    <script>
+        const images = [
+            "../../resource/2024achive/sehwa_1.jpg",
+            "../../resource/2024achive/sehwa_2.jpg",
+            "../../resource/2024achive/sehwa_3.jpg",
+            "../../resource/2024achive/sehwa_4.jpg",
+            "../../resource/2024achive/sehwa_5.jpg"
+        ];
+        let currentIndex = 0;
+
+        function changePage(step) {
+            currentIndex += step;
+            
+            // 처음이나 끝에서 순환하지 않도록 방지
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= images.length) currentIndex = images.length - 1;
+            
+            updateViewer();
+        }
+
+        function updateViewer() {
+            const imgElement = document.getElementById('viewer-img');
+            const pageElement = document.getElementById('page-num');
+            
+            // 이미지 교체
+            imgElement.src = images[currentIndex];
+            imgElement.alt = `인터뷰 내용 ${currentIndex + 1}페이지`;
+            
+            // 페이지 번호 업데이트
+            pageElement.innerText = `${currentIndex + 1} / ${images.length}`;
+            
+            // 버튼 활성화/비활성화 시각적 피드백 (선택 사항)
+            document.querySelector('.prev-btn').style.opacity = (currentIndex === 0) ? "0.2" : "1";
+            document.querySelector('.next-btn').style.opacity = (currentIndex === images.length - 1) ? "0.2" : "1";
+            
+            // 스크롤을 뷰어 상단으로 부드럽게 이동 (모바일 배려)
+            if(window.innerWidth < 768) {
+                document.getElementById('viewer-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // 초기 버튼 상태 설정
+        updateViewer();
+    </script>
+
+    <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.85em; border-top: 1px solid #333;">
+        &copy; 2026 Dalhan9Art & 제주한라일보. All Rights Reserved.
+    </footer>
+</body>
+</html>
