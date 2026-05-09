@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제주 해녀 생애사 기록화 사업 - 세화리(가마리) 모델</title>
+    <style>
+        /* CSS Variables for Black & Simple Theme */
+        :root {
+            --bg-color: #0d0d0d;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --border-color: #333333;
+            --accent-color: #ffffff;
+        }
+
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            line-height: 1.8; 
+            color: var(--text-main); 
+            background-color: var(--bg-color);
+            margin: 0; 
+            padding: 0; 
+            font-weight: 300;
+            word-break: keep-all;
+        }
+
+        /* Hero Section - Flexbox applied */
+        .hero { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(13,13,13,0.85), rgba(13,13,13,0.95)), url('seahwa_sea.jpg'); 
+            background-position: center;
+            background-size: cover; 
+            color: var(--accent-color); 
+            padding: 120px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 { 
+            font-size: 2.8em; 
+            font-weight: 400;
+            margin-bottom: 15px; 
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        /* Content Area */
+        .content { 
+            width: 90%; 
+            max-width: 800px; /* narrowed for minimal reading experience */
+            margin: 80px auto; 
+        }
+
+        h2, h3 {
+            color: var(--accent-color);
+            font-weight: 400;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            color: var(--text-muted);
+        }
+
+        .highlight { 
+            color: var(--accent-color); 
+            font-weight: 500; 
+            border-bottom: 1px solid var(--text-muted);
+        }
+
+        /* Minimalist Quote Box */
+        .quote-box { 
+            border-left: 2px solid var(--border-color); 
+            padding: 20px 0 20px 30px; 
+            margin: 60px 0; 
+            color: var(--text-muted);
+            font-size: 1.05em;
+        }
+
+        /* Table Styling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .info-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 30px; 
+            text-align: left;
+        }
+
+        .info-table th, .info-table td { 
+            padding: 20px 15px; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .info-table th { 
+            color: var(--accent-color);
+            font-weight: 400;
+            border-top: 2px solid var(--accent-color); 
+        }
+
+        /* Minimalist Outline Button */
+        .btn-group { 
+            text-align: center; 
+            margin-top: 80px; 
+            margin-bottom: 40px;
+        }
+
+        .btn { 
+            display: inline-block;
+            padding: 16px 45px; 
+            background: transparent; 
+            color: var(--accent-color); 
+            text-decoration: none; 
+            border: 1px solid var(--border-color); 
+            font-size: 0.95em;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease; 
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero { padding: 80px 20px; }
+            .hero h1 { font-size: 2em; }
+            .content { margin: 50px auto; }
+            .info-table th, .info-table td { padding: 15px 10px; font-size: 0.9em; }
+            .btn { padding: 15px 30px; width: 80%; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>숨비소리에 담긴 삶의 궤적</h1>
+        <p>세화리(가마리) 해녀 어르신들의 소중한 기억을 보존합니다</p>
+    </header>
+    <main class="content">
+        <h2>사업의 취지</h2>
+        <p>유네스코 인류무형문화유산인 제주 해녀는 제주의 상징이자 강인한 어머니의 표상입니다.[1, 4] <span class="highlight">세화리(가마리)</span>를 기점으로 시작되는 이번 기록화 사업은 고령 해녀들의 삶을 기록하여 미래 세대에게 소중한 자산으로 물려주기 위한 약속입니다.</p>
+        
+        <div class="quote-box">
+            "바다에 들어가면 저승이고, 나오면 이승이라 했습니다. 그 험한 길을 묵묵히 걸어온 우리 해녀 어르신들의 이야기가 곧 제주의 역사입니다." [3, 8]
+        </div>
+
+        <h3>조사 계획 및 추진 지역</h3>
+        <div class="table-container">
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>어촌계</th>
+                        <th>대상 및 목적</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>거점 마을</td>
+                        <td>세화리(가마리)</td>
+                        <td>전형적인 해녀 공동체 모델 구축 및 기록 확장 </td>
+                    </tr>
+                    <tr>
+                        <td>확장 마을</td>
+                        <td>표선, 하천, 토산</td>
+                        <td>표선 권역 전체의 해양 문화 네트워크 형성 </td>
+                    </tr>
+                    <tr>
+                        <td>조사 대상</td>
+                        <td>75세 이상 해녀</td>
+                        <td>물질 경험, 생애 전반, 마을 문화유산 구술 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="btn-group">
+            <a href="#" class="btn">해녀 어르신 추천 및 문의하기</a>
+        </div>
+    </main>
+</body>
+</html>
